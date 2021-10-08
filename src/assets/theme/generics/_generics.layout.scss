@@ -1,0 +1,18 @@
+.page-layout {
+    min-height: calc(100vh - 125px);
+    width: 100%; 
+    
+    &--all-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &--module-all-center {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+}
