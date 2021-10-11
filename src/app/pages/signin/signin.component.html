@@ -1,5 +1,5 @@
 <div class="page-layout--all-center sign-in">
-  <kendo-card class="sign-in--card">
+  <kendo-card class="card sign-in--card">
       <kendo-card-body>
           <div class="sign-in--header">
             <img class="sign-in--header--logo" src="/assets/svgs/logo.svg"/>
@@ -19,7 +19,7 @@
             <button style="margin-left: 50px;">Random</button>
           </div>
           <div class="sign-in--submit">
-            <button>CONTINUE</button>
+            <button (click)="onClick()">CONTINUE</button>
           </div>
         </kendo-card-body>
   </kendo-card>

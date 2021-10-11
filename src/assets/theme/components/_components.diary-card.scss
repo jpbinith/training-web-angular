@@ -1,0 +1,35 @@
+.diary-card {
+    background-color: #b9e9ff;
+
+    &--title {
+        font-size: 1.5rem !important;
+        font-weight: 500 !important;
+        font-family: Open Sans, sans-serif !important;
+        margin-bottom: 0 !important;
+    }
+
+    &--name {
+        margin-bottom: 12px;
+        color: rgba(0, 0, 0, 0.54);
+        font-size: 0.875rem;
+        font-family: Open Sans, sans-serif;
+        font-weight: 500;
+        line-height: 1.5;
+    }
+
+    &--button {
+        background-color: transparent;
+        font-size: 0.8125rem;
+        font-family: Open Sans, sans-serif;
+        font-weight: 600;
+        border-radius: 20px;
+        text-transform: uppercase;
+        color: black;
+
+        &:hover:not([disabled]) {
+            cursor: pointer;
+            background-color: #b2dceb;
+            opacity: 1 !important;
+        }
+    }
+}

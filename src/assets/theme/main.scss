@@ -1,5 +1,6 @@
 // components
 @import "./components/components.signin";
+@import "./components/components.diary-card";
 
 // generics
 @import "./generics/generics.layout";
@@ -7,3 +8,6 @@
 // elements
 @import "./elements/elements.button";
 @import "./elements/elements.input";
+
+// objects
+@import "./objects/objects.card";

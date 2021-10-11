@@ -1,0 +1,19 @@
+<kendo-card class="card diary-card">
+    <kendo-card-body class="card-body">
+      <h4 class="diary-card--title">{{cardData.title}}</h4>
+      <h3 class="diary-card--name">{{name}}</h3>
+      <div>
+        <hr kendoCardSeparator/>
+        <div class="recipe-wrap">
+          {{cardData.description.length > 100 ? (isMore ? cardData.description : cardData.description.slice(0, 100).concat('...')) : cardData.description}}
+        </div>
+      </div>
+    </kendo-card-body>
+    <kendo-card-actions class="action-bar">
+      <div style="padding: 0">
+        <button class="diary-card--button" (click)="showMore()">
+          {{isMore ? 'Show Less' : 'Read More'}}
+        </button>
+      </div>
+    </kendo-card-actions>
+  </kendo-card>

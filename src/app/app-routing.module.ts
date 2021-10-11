@@ -9,7 +9,7 @@ const routes: Routes = [
     component: SigninComponent
   },
   {
-    path: 'home',
+    path: 'home/:name',
     component: HomeComponent
   }
 ];
