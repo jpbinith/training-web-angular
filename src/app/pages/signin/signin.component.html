@@ -1,4 +1,26 @@
 <div class="page-layout--all-center sign-in">
-    abcde
-    <button routerLink="/home">Sign in</button>
+  <kendo-card class="sign-in--card">
+      <kendo-card-body>
+          <div class="sign-in--header">
+            <img class="sign-in--header--logo" src="/assets/svgs/logo.svg"/>
+            <span>Dear Diary</span>
+          </div>
+          <div class="sign-in--heading">
+            <h1>Sign In</h1>
+          </div>
+          <div class="sign-in--form">
+            <kendo-floatinglabel text="First Name">
+              <kendo-textbox
+                [style.width.px]="200"
+                [clearButton]="true"
+                [(ngModel)]="name"
+              ></kendo-textbox>
+            </kendo-floatinglabel>
+            <button style="margin-left: 50px;">Random</button>
+          </div>
+          <div class="sign-in--submit">
+            <button>CONTINUE</button>
+          </div>
+        </kendo-card-body>
+  </kendo-card>
 </div>
