@@ -1,1 +1,27 @@
-<p>add-form works!</p>
+<div class="add-form add-form__all-center">
+    <form class="k-form" [formGroup]="addForm">
+        <fieldset class="k-form-fieldset add-form--forms">
+            <kendo-formfield>
+                <kendo-label text="Title"></kendo-label>
+                <input
+                  formControlName="title"
+                  kendoTextBox
+                  required
+                />
+                <kendo-formerror>Error: Title is required</kendo-formerror>
+            </kendo-formfield>
+            <kendo-formfield>
+                <kendo-label text="Description"></kendo-label>
+                <kendo-textarea
+                  formControlName="description"
+                  kendoTextBox
+                ></kendo-textarea>
+            </kendo-formfield>
+            <div class="k-form-buttons" style="display: flex; justify-content: center;">
+                <button (click)="onSubmit()">
+                  Submit
+                </button>
+            </div>
+        </fieldset>
+    </form>
+</div>

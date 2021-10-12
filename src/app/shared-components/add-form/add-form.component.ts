@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { DiaryCard } from 'src/app/models/diary-card.model';
 
 @Component({
   selector: 'app-add-form',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddFormComponent implements OnInit {
 
+  addForm: FormGroup = new FormGroup({
+    title: new FormControl(),
+    description: new FormControl()
+  });
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit() {
+    const data: DiaryCard = {
+      title: this.addForm.value.title,
+      description: this.addForm.value.description
+    }
+    console.log(data)
   }
 
 }

@@ -1,0 +1,13 @@
+.add-form {
+    width: 100%;
+    margin: 50px;
+
+    &__all-center {
+        display: flex;
+        justify-content: center;
+    }
+
+    &--forms {
+        width: 700px;
+    }
+}

@@ -10,7 +10,7 @@ import { SigninComponent } from './pages/signin/signin.component';
 import { InputsModule } from '@progress/kendo-angular-inputs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LabelModule } from '@progress/kendo-angular-label';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { DiaryCardComponent } from './shared-components/diary-card/diary-card.component';
 import { AddFormComponent } from './shared-components/add-form/add-form.component';
@@ -32,6 +32,7 @@ import { AddFormComponent } from './shared-components/add-form/add-form.componen
     InputsModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     MatIconModule
   ],
   providers: [],
