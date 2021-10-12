@@ -15,7 +15,9 @@
                 <kendo-textarea
                   formControlName="description"
                   kendoTextBox
+                  required
                 ></kendo-textarea>
+                <kendo-formerror>Error: Description is required</kendo-formerror>
             </kendo-formfield>
             <div class="k-form-buttons" style="display: flex; justify-content: center;">
                 <button (click)="onSubmit()">

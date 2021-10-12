@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DiaryCard } from 'src/app/models/diary-card.model';
 
@@ -8,6 +8,8 @@ import { DiaryCard } from 'src/app/models/diary-card.model';
   styleUrls: ['./add-form.component.scss']
 })
 export class AddFormComponent implements OnInit {
+  
+  @Output() submitted = new EventEmitter<DiaryCard>();
 
   addForm: FormGroup = new FormGroup({
     title: new FormControl(),
@@ -24,7 +26,7 @@ export class AddFormComponent implements OnInit {
       title: this.addForm.value.title,
       description: this.addForm.value.description
     }
-    console.log(data)
+    this.submitted.emit(data);
   }
 
 }

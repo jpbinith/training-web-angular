@@ -1,4 +1,10 @@
 <div class="page-layout">
-    <app-add-form></app-add-form>
-    <!-- <app-diary-card></app-diary-card> -->
+    <app-add-form (submitted)="onSubmit($event)"></app-add-form>
+
+    <div class="d-flex flex-wrap mr-10 ml-5">
+        <app-diary-card  class="mb-auto p-4"
+            *ngFor="let diaryCard of diaryCards" 
+            [cardData]="diaryCard" 
+            [name]="name"></app-diary-card>
+    </div>
 </div>
