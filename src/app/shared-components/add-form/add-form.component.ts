@@ -1,6 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { DiaryCard } from 'src/app/models/diary-card.model';
+import { Store } from '@ngrx/store';
+import { submitDiaryCard } from 'src/app/store/actions/add-form.actions';
+import { DiaryCard } from 'src/app/store/reducers/diary-card.reducer';
 
 @Component({
   selector: 'app-add-form',
@@ -16,7 +18,7 @@ export class AddFormComponent implements OnInit {
     description: new FormControl()
   });
 
-  constructor() { }
+  constructor(private store: Store) { }
 
   ngOnInit(): void {
   }
@@ -26,7 +28,7 @@ export class AddFormComponent implements OnInit {
       title: this.addForm.value.title,
       description: this.addForm.value.description
     }
-    this.submitted.emit(data);
+    this.store.dispatch(submitDiaryCard({payload: data}));
   }
 
 }

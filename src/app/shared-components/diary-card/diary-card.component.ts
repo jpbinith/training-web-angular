@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { DiaryCard } from 'src/app/models/diary-card.model';
+import { DiaryCard } from 'src/app/store/reducers/diary-card.reducer';
 
 @Component({
   selector: 'app-diary-card',
