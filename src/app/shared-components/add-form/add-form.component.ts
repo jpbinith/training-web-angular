@@ -10,7 +10,7 @@ import { DiaryCard } from 'src/app/store/reducers/diary-card.reducer';
   styleUrls: ['./add-form.component.scss']
 })
 export class AddFormComponent implements OnInit {
-  
+
   @Output() submitted = new EventEmitter<DiaryCard>();
 
   addForm: FormGroup = new FormGroup({
@@ -28,7 +28,12 @@ export class AddFormComponent implements OnInit {
       title: this.addForm.value.title,
       description: this.addForm.value.description
     }
-    this.store.dispatch(submitDiaryCard({payload: data}));
+    this.store.dispatch(submitDiaryCard(
+      {
+        payload: {
+          diaryCard: data
+        }
+      }));
   }
 
 }

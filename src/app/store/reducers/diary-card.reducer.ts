@@ -6,9 +6,15 @@ export interface DiaryCard {
     description: String
 }
 
-export const initialState: DiaryCard[] = [];
+export interface DIaryCardState {
+    diaryCards: DiaryCard[]
+}
+
+export const initialState: DIaryCardState = {
+    diaryCards: []
+};
 
 export const diaryCardReducer = createReducer(
     initialState,
-    on(submitDiaryCard, (state, {payload}) => [...state, payload])
+    on(submitDiaryCard, (state, {payload}) => { return {...state, diaryCards: [...state.diaryCards, payload.diaryCard]}})
 );

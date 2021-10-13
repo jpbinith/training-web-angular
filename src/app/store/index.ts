@@ -1,14 +1,14 @@
 import { ActionReducerMap } from "@ngrx/store";
-import { DiaryCard, diaryCardReducer } from "./reducers/diary-card.reducer";
+import { DiaryCard, diaryCardReducer, DIaryCardState } from "./reducers/diary-card.reducer";
 
 export enum Features {
-    CardState = 'cardState'
+    Cards = 'cards'
 }
 
 export interface RootState {
-    cardState: DiaryCard[];
+    cards: DIaryCardState;
 }
 
 export const reducers: ActionReducerMap<RootState> = {
-    cardState: diaryCardReducer
+    cards: diaryCardReducer
 }

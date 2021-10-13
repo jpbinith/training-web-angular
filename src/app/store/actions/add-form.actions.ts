@@ -5,4 +5,9 @@ export enum AddFormActionTypes {
     SUBMIT_NEW_DIARY_CARD = '[Add Form] Submit'
 }
 
-export const submitDiaryCard = createAction(AddFormActionTypes.SUBMIT_NEW_DIARY_CARD, props<{payload: DiaryCard}>());
+export const submitDiaryCard = createAction(AddFormActionTypes.SUBMIT_NEW_DIARY_CARD,
+    props<{
+        payload: {
+            diaryCard: DiaryCard
+        }
+    }>());
