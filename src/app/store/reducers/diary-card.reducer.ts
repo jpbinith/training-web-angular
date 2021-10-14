@@ -18,8 +18,6 @@ export const initialState: DIaryCardState = {
 export const diaryCardReducer = createReducer(
     initialState,
     on(loadDiaryCardSuccess, (state, { payload }) => {
-        console.log("payload")
-        console.log(payload)
         return {
             ...state,
             diaryCards: payload ? payload.diaryCard : state.diaryCards

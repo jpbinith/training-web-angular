@@ -28,11 +28,8 @@ export class DiaryCardEffects {
         return this.action$.pipe(
             ofType(LoadDiaryCards),
             concatMap(() => this.diaryCardService.getDiaryCards().pipe(
-                map((diaryCards) => {
-                    console.log('diaryCards')
-                    console.log(diaryCards)
-                    return loadDiaryCardSuccess({ payload: { diaryCard: diaryCards } })
-                }),
+                map((diaryCards) => loadDiaryCardSuccess({ payload: { diaryCard: diaryCards } })
+                ),
                 catchError(() => of(LoadDiaryCardsError()))
             ))
         );
