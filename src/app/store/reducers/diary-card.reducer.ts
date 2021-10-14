@@ -1,7 +1,8 @@
 import { createReducer, on } from '@ngrx/store';
-import { submitDiaryCard } from '../actions/add-form.actions';
+import { loadDiaryCardSuccess, submitDiaryCard } from '../actions/diary-card.actions';
 
 export interface DiaryCard {
+    name: String,
     title: String,
     description: String
 }
@@ -16,5 +17,12 @@ export const initialState: DIaryCardState = {
 
 export const diaryCardReducer = createReducer(
     initialState,
-    on(submitDiaryCard, (state, {payload}) => { return {...state, diaryCards: [...state.diaryCards, payload.diaryCard]}})
+    on(loadDiaryCardSuccess, (state, { payload }) => {
+        console.log("payload")
+        console.log(payload)
+        return {
+            ...state,
+            diaryCards: payload ? payload.diaryCard : state.diaryCards
+        }
+    })
 );

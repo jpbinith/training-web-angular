@@ -1,7 +1,7 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { submitDiaryCard } from 'src/app/store/actions/add-form.actions';
+import { submitDiaryCard } from 'src/app/store/actions/diary-card.actions';
 import { DiaryCard } from 'src/app/store/reducers/diary-card.reducer';
 
 @Component({
@@ -11,6 +11,8 @@ import { DiaryCard } from 'src/app/store/reducers/diary-card.reducer';
 })
 export class AddFormComponent implements OnInit {
 
+  
+  @Input() name!: String;
   @Output() submitted = new EventEmitter<DiaryCard>();
 
   addForm: FormGroup = new FormGroup({
@@ -25,6 +27,7 @@ export class AddFormComponent implements OnInit {
 
   onSubmit() {
     const data: DiaryCard = {
+      name: this.name,
       title: this.addForm.value.title,
       description: this.addForm.value.description
     }

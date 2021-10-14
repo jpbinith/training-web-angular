@@ -15,7 +15,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { DiaryCardComponent } from './shared-components/diary-card/diary-card.component';
 import { AddFormComponent } from './shared-components/add-form/add-form.component';
 import { StoreModule } from '@ngrx/store';
-import { reducers } from './store';
+import { effects, reducers } from './store';
+import { EffectsModule } from '@ngrx/effects';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { firebaseConfig } from 'fbConfig';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,10 @@ import { reducers } from './store';
     FormsModule,
     ReactiveFormsModule,
     MatIconModule,
-    StoreModule.forRoot(reducers)
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot(effects),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
